@@ -1,0 +1,5 @@
+print("Hello World")
+print("My name is Faria")
+print("I am learning Python")
+print("I am from Bangladesh")
+print("My favorite colour is White")
