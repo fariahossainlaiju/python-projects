@@ -1,0 +1,89 @@
+print("inventory management system")
+
+products =[]
+def add_product():
+    name=input("enter product name:")
+    price=float(input("enter product price:"))
+    quantity=int(input("enter quantity:"))
+
+    product={"name":name,"price":price,"quantity":quantity}
+
+    products.append(product)
+
+    print("product added successfully")
+
+
+def show_products():
+    print("==all products==")
+    if len(products)==0:
+        print("no products found")
+    else:
+        for product in products:
+            print("name:",product["name"],"|price:",product["price"],"|quantity:",product["quantity"])
+
+
+
+def search_product():
+    name=input("enter product name to search:")
+
+    found=False
+
+    for product in products:
+        if product["name"].lower()==name.lower():
+            print("product found")
+            print("name:",product["name"])
+            print("price:",product["price"])
+            print("quantity:",product["quantity"])
+            found=True
+
+
+
+    if found == False:
+        print("product not found")
+
+
+
+def total_inventory_value():
+    total=0
+
+    for product in products:
+        total+= product["price"]*product["quantity"]
+
+
+
+    print("total inventory value:",total)
+
+
+while True:
+
+
+    print("==menu==")
+    print("1.add product")
+    print("2.show products")
+    print("3.search product")
+    print("4.total inventory value")
+    print("5.exit")
+
+
+    choice=input("enter your choice:")
+
+    if choice=="1":
+       add_product()
+
+    elif choice=="2":
+         show_products()
+
+    elif choice=="3":
+         search_product()
+
+
+    elif choice=="4":
+         total_inventory_value()
+
+    elif choice=="5":
+       print("thank you!")
+       break
+
+    else:
+         print("invalid choice")
+
